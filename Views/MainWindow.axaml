@@ -1,0 +1,95 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:VTCalc.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="250" d:DesignHeight="300"
+        MinHeight="300"
+        MinWidth="250"
+        Height="300"
+        Width="250"
+        x:Class="VTCalc.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="VTCalc">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+  <Grid RowDefinitions="auto,auto,*">
+    <!-- menu bar -->
+    <Menu Grid.Row="0">
+      <MenuItem Header="File">
+        <MenuItem Header="Exit"/>
+      </MenuItem>
+    </Menu>
+    
+    <!-- result screen -->
+    <TextBox Grid.Row="1"
+             TextAlignment="Right" FontSize="30" Margin="5" >
+    </TextBox>
+    
+    <!-- keys -->
+    <Grid Grid.Row="2" RowDefinitions="*,*,*,*" ColumnDefinitions="*,*,*,*,*">
+      <Button Grid.Row="0" Grid.Column="0">
+        1
+      </Button>
+      <Button Grid.Row="0" Grid.Column="1">
+        2
+      </Button>
+      <Button Grid.Row="0" Grid.Column="2">
+        3
+      </Button>
+      <Button Grid.Row="1" Grid.Column="0">
+        4
+      </Button>
+      <Button Grid.Row="1" Grid.Column="1">
+        5
+      </Button>
+      <Button Grid.Row="1" Grid.Column="2">
+        6
+      </Button>
+      <Button Grid.Row="2" Grid.Column="0">
+        7
+      </Button>
+      <Button Grid.Row="2" Grid.Column="1">
+        8
+      </Button>
+      <Button Grid.Row="2" Grid.Column="2">
+        9
+      </Button>
+      
+      <Button Grid.Row="3" Grid.Column="0">
+        C
+      </Button>
+      <Button Grid.Row="3" Grid.Column="1">
+        0
+      </Button>
+      
+      <Button Grid.Row="3" Grid.Column="2">←</Button>
+      <Button Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="2"> </Button>
+
+      <Button Grid.Row="1" Grid.Column="3">
+        +
+      </Button>
+      <Button Grid.Row="1" Grid.Column="4">
+        -
+      </Button>
+      <Button Grid.Row="2" Grid.Column="3">
+        *
+      </Button>
+      <Button Grid.Row="2" Grid.Column="4" >
+        /
+      </Button>
+      <Button Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2">
+        =
+      </Button>
+
+
+    </Grid>
+  </Grid>
+
+</Window>
